@@ -1,0 +1,68 @@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">{{ title }}</h6>
+    </div>
+    <!--form-->
+    <div class="card-body">
+    <form [formGroup]="empleados" (ngSubmit)="grabar()">
+    <div class="mb-2">
+    
+    <div class="mb-2">
+        <label for="ID_departamento"> Id Departamentos </label>
+        <input type="text" class="form-control" formControlName="ID_departamento"/>
+        @if (empleados.invalid && (empleados.dirty || empleados.touched)) {
+           <div class="alert">
+             @if (empleados.errors?.["required"]) {
+             <div class="ng-invalid">Id Departamento es requerido</div>
+             }
+           </div>
+           }
+       </div>
+       <div class="mb-2">
+        <label for="Nombre"> Nombre </label>
+        <input type="text" class="form-control" formControlName="Nombre"/>
+        @if (empleados.invalid && (empleados.dirty || empleados.touched)) {
+           <div class="alert">
+             @if (empleados.errors?.["required"]) {
+             <div class="ng-invalid">Nombre es requerido</div>
+             }
+           </div>
+           }
+       </div>
+       <div class="mb-2">
+        <label for="Cargo"> Cargo </label>
+        <input type="text" class="form-control" formControlName="Cargo"/>
+        @if (empleados.invalid && (empleados.dirty || empleados.touched)) {
+           <div class="alert">
+             @if (empleados.errors?.["required"]) {
+             <div class="ng-invalid">Cargo es requerido</div>
+             }
+           </div>
+           }
+       </div>
+       <label for="Salario"> Salario </label>
+       <input type="text" class="form-control" formControlName="Salario"/>
+       @if (empleados.invalid && (empleados.dirty || empleados.touched)) {
+          <div class="alert">
+            @if (empleados.errors?.["required"]) {
+            <div class="ng-invalid">Salario es requerido</div>
+            }
+          </div>
+          }
+      </div>
+       <div class ="mb-2">
+        <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!empleados.valid"
+      >
+        Grabar
+      </button>
+      <button class="btn btn-secondary" routerLink="/empleados">
+        Cancelar
+      </button>
+       </div>
+       
+ </form>
+   </div>  
+</div>

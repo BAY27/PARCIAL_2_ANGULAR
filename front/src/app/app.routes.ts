@@ -8,6 +8,8 @@ import { StocksComponent } from './views/stocks/stocks.component';
 import { NuevoProveedorComponent } from './views/proveedores/nuevo-proveedor/nuevo-proveedor.component';
 import { NuevoProductoComponent } from './views/productos/nuevo.producto/nuevo-producto.component';
 import { NuevoStocksComponent } from './views/stocks/nuevo-stocks/nuevo-stocks.component';
+import { NuevoEmpleadosComponent } from './views/empleados/nuevo-empleados/nuevo-empleados.component';
+import { EmpleadosComponent } from './views/empleados/empleados.component';
 
 
 export const routes: Routes = [
@@ -50,7 +52,17 @@ export const routes: Routes = [
     path: 'editar-stock/:id',
     component: NuevoStocksComponent,
   },
-  
+  { path: 'empleados', 
+  component: EmpleadosComponent },
+
+  { path: 'nuevo-empleados', 
+  component: NuevoEmpleadosComponent },
+
+  {
+    path: 'editar-empleados/:id',
+    component: NuevoEmpleadosComponent,
+  },
+
   { path: 'login', component: LoginComponent },
   { path: '**', component: PageNotFoundComponentComponent },
 ];

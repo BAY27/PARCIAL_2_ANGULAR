@@ -1,0 +1,61 @@
+<div class="card shadow mb-6">
+    <div class="card-header py-5">
+      <h6 class="m-0 font-weight-bold text-primary">{{ title }}</h6>
+      <hr />
+      <button class="btn btn-primary" routerLink="/nuevo-empleados">Nuevo</button>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table
+          class="table table-bordered"
+          id="dataTable"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>ID_departamento</th>
+              <th>Nombre</th>
+              <th>Cargo</th>
+              <th>Salario</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (empleado of empleados; track empleado.ID_empleado; let i =
+            $index) {
+            <tr>
+              <td>{{ i + 1 }}</td>
+              <td>{{ empleado.ID_departamento }}</td>
+              <td>{{ empleado.Nombre }}</td>
+              <td>{{ empleado.Cargo }}</td>
+              <td>{{ empleado.Salario }}</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-outline-warning"
+                  routerLink="/editar-empleados/{{ empleado.ID_empleado}}"
+                >
+                  Editar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-danger"
+                  (click)="eliminar(empleado.ID_empleado)"
+                >
+                  Eliminar
+                </button>
+              </td>
+            </tr>
+            }@empty {
+            <tr>
+              <td colspan="5">No existen registros</td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <button (click)="alerta()">mensaje</button>
