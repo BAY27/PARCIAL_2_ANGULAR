@@ -7,7 +7,7 @@ class Clase_Departamentos
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "SELECT * FROM `Departamentos`";
+            $cadena = "SELECT * FROM `departamentos`";
             $result = mysqli_query($con, $cadena);
             return $result;
         } catch (Throwable $th) {
@@ -21,7 +21,7 @@ class Clase_Departamentos
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "SELECT * FROM `Departamentos` WHERE ID_departamento=$ID_departamento";
+            $cadena = "SELECT * FROM `departamentos` WHERE ID_departamento=$ID_departamento";
             $result = mysqli_query($con, $cadena);
             return $result;
         } catch (Throwable $th) {
@@ -35,7 +35,7 @@ class Clase_Departamentos
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "INSERT INTO `Departamentos`( `Nombre`, `Cargo`, `Salario`) VALUES ('$Nombre',$Cargo,'$Salario')";
+            $cadena = "INSERT INTO `departamentos`( `Nombre`, `Cargo`, `Salario`) VALUES ('$Nombre',$Cargo,'$Salario')";
             $result = mysqli_query($con, $cadena);
             return 'ok';
         } catch (Throwable $th) {
@@ -49,7 +49,7 @@ class Clase_Departamentos
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "UPDATE `Departamentos` SET `ID_departamento`='$ID_departamento',`Nombre`='$Nombre',`Cargo`='$Cargo',`Salario`='$Salario' WHERE `ID_departamento`=$ID_departamento";
+            $cadena = "UPDATE `departamentos` SET `ID_departamento`='$ID_departamento',`Nombre`='$Nombre',`Cargo`='$Cargo',`Salario`='$Salario' WHERE `ID_departamento`=$ID_departamento";
             $result = mysqli_query($con, $cadena);
             return "ok";
         } catch (Throwable $th) {

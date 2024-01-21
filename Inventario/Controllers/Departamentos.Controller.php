@@ -37,6 +37,7 @@ case 'todos':
         $Nombre = $_POST["Nombre"];
         $Ubicacion = $_POST["Ubicacion"];
         $Presupuesto = $_POST["Presupuesto"];
+        
         $datos = array(); //defino un arreglo
         $datos = $departamentos->insertar($Nombre, $Ubicacion, $Presupuesto); //llamo al modelo de usuarios e invoco al procedimiento insertar
         echo json_encode($datos); //devuelvo el arreglo en formato json

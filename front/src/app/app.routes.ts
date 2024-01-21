@@ -10,6 +10,8 @@ import { NuevoProductoComponent } from './views/productos/nuevo.producto/nuevo-p
 import { NuevoStocksComponent } from './views/stocks/nuevo-stocks/nuevo-stocks.component';
 import { NuevoEmpleadosComponent } from './views/empleados/nuevo-empleados/nuevo-empleados.component';
 import { EmpleadosComponent } from './views/empleados/empleados.component';
+import { NuevoDepartamentosComponent } from './views/departamentos/nuevo-departamentos/nuevo-departamentos.component';
+import { DepartamentosComponent } from './views/departamentos/departamentos.component';
 
 
 export const routes: Routes = [
@@ -61,6 +63,17 @@ export const routes: Routes = [
   {
     path: 'editar-empleados/:id',
     component: NuevoEmpleadosComponent,
+  },
+
+  { path: 'departamentos', 
+  component: DepartamentosComponent },
+
+  { path: 'nuevo-departamentos', 
+  component: NuevoDepartamentosComponent },
+
+  {
+    path: 'editar-departamentos/:id',
+    component: NuevoDepartamentosComponent,
   },
 
   { path: 'login', component: LoginComponent },

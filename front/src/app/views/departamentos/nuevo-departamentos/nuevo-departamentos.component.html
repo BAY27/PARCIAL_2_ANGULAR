@@ -1,0 +1,55 @@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">{{ title }}</h6>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="departamentos" (ngSubmit)="grabar()">
+        <div class="mb-2">
+          <label for="Nombre">Nombre</label>
+          <input type="text" class="form-control" formControlName="Nombre" />
+          @if (departamentos.invalid && (departamentos.dirty || departamentos.touched)) {
+          <div class="alert">
+            @if (departamentos.errors?.["required"]) {
+            <div class="ng-invalid">Nombres es requerido</div>
+            }
+          </div>
+          }
+        </div>
+        <div class="mb-2">
+          <label for="Ubicacion">Ubicacion</label>
+          <input type="text" class="form-control" formControlName="Ubicacion" />
+          @if (departamentos.invalid && (departamentos.dirty || departamentos.touched)) {
+          <div class="alert">
+            @if (departamentos.errors?.["required"]) {
+            <div class="ng-invalid">La Ubicacion  es requerida</div>
+           }
+          </div>
+          }
+        </div>
+        <div class="mb-2">
+          <label for="Presupuesto">Presupuesto</label>
+          <input type="text" class="form-control" formControlName="Presupuesto" />
+          @if (departamentos.invalid && (departamentos.dirty || departamentos.touched)) {
+          <div class="alert">
+            @if (departamentos.errors?.["required"]) {
+            <div class="ng-invalid">El Presupuesto  es requerido</div>
+           }
+          </div>
+          }
+        </div>
+   
+        <div class="mb-2">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!departamentos.valid"
+          >
+            Grabar
+          </button>
+          <button class="btn btn-secondary" routerLink="/departamentos">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
